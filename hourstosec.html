@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hours to second</title>
+</head>
+<style>
+    body{
+        background-color: pink;
+    }
+    form{
+        margin: 5% 15% 5% 15%;
+         text-align: center;
+        padding-top: 15%;
+        background-color: aquamarine;
+        
+      
+    }
+    label{
+        padding :15px ;
+        color:rgb(196, 98, 7);
+        width: 350px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
+ :hover label{
+    background-color:#081b0e;
+    transition: 2s;
+ }
+ input{
+    border-radius: 4px;
+    background-color: rgb(196, 153, 236);
+    font-size: 27px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+ }
+ :hover input{
+    color:rgb(170, 18, 84);
+    cursor: pointer;
+ }
+:hover ::placeholder{
+    background-color: beige;
+    cursor: pointer;
+}
+input .button{
+    width:12%;
+    height: 1vh;
+}
+</style>
+<body>
+    <form>
+    <label>HOURS</label>
+    <input type="text" id="hour" placeholder=" ENTER HERE" onclick="hour()" ondblclick="clearInput('hour')">
+    <label >SECONDS</label>
+    <input type="text" id="sec" placeholder=" ENTER HERE" onclick="sec()" ondblclick="clearInput('sec')">i
+    <input type="button"  value="Seconds" width="12%" onclick="convertToSeconds()">
+    <input type="button"  value=" Hours" onclick="convertToHours()">
+
+</form>
+
+  
+  <script>
+     //input clearence 
+    function clearInput(inputId) {
+            document.getElementById(inputId).value = "";
+        }
+
+//hourtosec
+    function convertToSeconds() {
+        const hourInput = document.getElementById("hour");
+        const secInput = document.getElementById("sec");
+        const hours = parseFloat(hourInput.value);
+        if (!isNaN(hours)) {
+            secInput.value = hours * 3600;
+        } else {
+            secInput.value = "Invalid Input";
+        }
+    }
+//sectohour
+    function convertToHours() {
+        const hourInput = document.getElementById("hour");
+        const secInput = document.getElementById("sec");
+        const seconds = parseFloat(secInput.value);
+        if (!isNaN(seconds)) {
+            hourInput.value = seconds / 3600;
+        } else {
+            hourInput.value = "Invalid Input";
+        }
+    }
+</script>
+
+
+    </script>
+
+
+</body>
+</html>
